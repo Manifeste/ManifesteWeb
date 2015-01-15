@@ -1,0 +1,17 @@
+<div class="body">
+	<center><h2>Suas Ocorrências</h2></center>
+	<table>
+		<tr>
+			<th>Título</th>
+			<th>Descrição</th>
+		</tr>
+		<tr ng-repeat="ocorrencia in model">
+			<td>
+				<a href="#/ocorrencias/{{ocorrencia._id}}">
+					{{ocorrencia.titulo}}
+				</a>
+			</td>
+			<td>{{ocorrencia.descricao}}</td>
+		</tr>
+	</table>
+</div>

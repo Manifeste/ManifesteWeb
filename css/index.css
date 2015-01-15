@@ -1,0 +1,39 @@
+*{
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+body {
+    background-color: #caffcb;
+}
+.form {
+	background-color: white;
+	margin: 0 auto;	
+	border: 2px solid #69A84F;
+	border-radius: 10px;
+	width: 380px;
+	height: 380px;
+	padding: 5px;
+	margin-top: 120px;	
+}
+.form img {
+	padding: 10px;
+}
+.form p {
+	height: 15px;
+}
+.campos input {
+	width: 220px;
+	height: 30px;
+}
+.botao {
+	padding: 18px;
+}
+.botao input {
+	width: 70px;
+	height: 30px;
+}
+.form a {
+	text-decoration: none;
+	font-size: 14px;
+	margin: 10px;
+	margin-top: 10px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="Manifeste">
+	<head>
+		<title>Manifeste</title>
+		<meta charset="UTF-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-resource.js"></script>
+    	<script src="manifeste_app.js"></script>
+    	<script src="js/ocorrencias.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="header" ng-controller="user">
+			<center>
+				<img src="img/logo.jpg" alt="Logo do x'sistema" height="75" width="75"/>
+				<p class="nome">Bem vindo, <strong>{{username}}</strong></p>
+			</center>
+
+			<table class="menu">
+			  <tr>
+		      	<td><a href="#/main">Inicio</a></td>
+			    <td><a href="#/ocorrencias">Ocorrências</a></td>
+			    <td><a href="#/busca">Busca</a></td>
+			    <td><a href="#/config">Configurações</a></td>
+			    <td><a href="index">Sair</a></td>
+			  </tr>
+			</table>
+		</div>
+
+		<div ng-view class="body"></div>
+	</body>
+</html>
