@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Manifeste</title>
+		<title>Manifeste!</title>
 		<meta charset="UTF-8">
-		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<script src="assets/lib/head.js" data-headjs-load="./app.js"></script>
 	</head>
 	<body>
-		<div class="form">
-			<center>
-				<!-- Logo do sistema -->
-		    	<img src="img/logo.jpg" alt="Logo do sistema" height="90" width="90"/>
-
-				<!-- Formulário de login -->
-				<form onclick="login()">
-					<p>Email</p>
-					<div class="campos">
-					    <input type="email" name="email">
-					</div>
-					<p>Senha</p>
-					<div class="campos">
-					  	<input type="password" name="password">
-					</div>
-					<div class="botao">
-					  	<input type="submit" value="Entrar">
-					</div>
-				</form>
-
-				<!-- Botões de cadastro -->
-				<a href="main.html">Cadastre-se</a>
-				<a href="main.html">Login com Facebook</a>
+		<div class="header">
+			<center ng-controller="SessionController">
+				<img src="assets/img/logo.jpg" alt="Logo do sistema" height="75" width="75"/>
+					<span ng-if="model.isAuthorized">
+						<p class="nome">
+							Bem vindo, <strong>Daniel Bastos</strong> (
+							 <a ng-click="model.sair()">sair</a>
+							)
+						</p>
+					</span>
+					<span ng-if="!model.isAuthorized">
+						<p class="nome">Bem vindo, <a href="#/login">faça login</a> ou <a href="#/signup"> se cadastre </a>
+					</span>
 			</center>
+
+			<table class="menu">
+			  <tr>
+		      	<td><a href="#/main">Inicio</a></td>
+			    <td><a href="#/minhas">Minhas ocorrências</a></td>
+			    <td><a href="#/config">Configurações</a></td>
+			    <td><a href="index">Sair</a></td>
+			  </tr>
+			</table>
 		</div>
+
+		<div ng-view class="body"></div>
 	</body>
 </html>

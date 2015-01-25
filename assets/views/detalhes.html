@@ -1,0 +1,17 @@
+<h2>{{ocorrencia.titulo}}</h2>
+<bold>Descrição: </bold> {{ocorrencia.descricao}} <br />
+<bold>Longitude: </bold> {{ocorrencia.loc.coordinates[0]}} <br />
+<bold>Latitude: </bold> {{ocorrencia.loc.coordinates[1]}}
+<span ng-if="ocorrencia.encerrado" class="animate-if"> 
+	<bold>Ocorrência encerrada</bold>
+</span>
+<br /><br />
+
+<span ng-click="encerrar()">Encerrar ocorrência</span>
+
+<hr />
+
+<form ng-submit="comentar( comentario )">
+	<textarea ng-model="comentario"></textarea>
+	<button>Adicionar Comentário</button>
+</form>
