@@ -1,17 +1,82 @@
-<h2>{{ocorrencia.titulo}}</h2>
-<bold>Descrição: </bold> {{ocorrencia.descricao}} <br />
-<bold>Longitude: </bold> {{ocorrencia.loc.coordinates[0]}} <br />
-<bold>Latitude: </bold> {{ocorrencia.loc.coordinates[1]}}
-<span ng-if="ocorrencia.encerrado" class="animate-if"> 
-	<bold>Ocorrência encerrada</bold>
-</span>
-<br /><br />
+<!-- Título e Dropdown -->
+<h2>
+	{{ocorrencia.titulo}}
+	<span class="dropdown">
+  		<span class="btn btn-default btn-xs" data-toggle="dropdown">
+    		<span class="caret"></span>
+		</span>
 
-<span ng-click="encerrar()">Encerrar ocorrência</span>
+		<!-- Dropdown menu -->
+  		<ul class="dropdown-menu btn btn-default btn-lg" role="menu">
+  			<!-- Encerrar e Reabrir-->
+  			<li ng-if="!ocorrencia.encerrado" role="presentation" ng-click="encerrar()">
+  				<a role="menuitem">
+  					Encerrar ocorrência
+  				</a>
+  			</li>
 
+  			<li ng-if="ocorrencia.encerrado" role="presentation" ng-click="reabrir()">
+  				<a role="menuitem">
+  					Reabir ocorrência
+  				</a>
+  			</li>
+
+  			<!-- Declarar interesse -->
+  			<li ng-click="declararInteresse()">
+  				<a role="menuitem">
+  					Declarar interesse
+  				</a>
+  			</li>
+
+  			<!-- Editar Ocorrência -->
+  			<li ng-click="__">
+  				<a role="menuitem">
+  					Editar ocorrência
+  				</a>
+  		</ul>
+	</span>
+</h2>
+
+<!-- Descrição -->
+
+<div>
+	<span ng-if="ocorrencia.encerrado">
+		<button class="btn btn-danger btn-xs" >
+			Encerrada
+		</button>
+		<br />
+	</span>
+
+	<br />
+
+	<bold>Descrição: </bold> {{ocorrencia.descricao}} <br />
+	<bold>Longitude: </bold> {{ocorrencia.loc.coordinates[0]}} <br />
+	<bold>Latitude: </bold> {{ocorrencia.loc.coordinates[1]}}
+</div>
+
+<br />
+<br />
+
+<!-- Comentários -->
 <hr />
+<div>
+	<h4>Comentários</h4>
 
-<form ng-submit="comentar( comentario )">
-	<textarea ng-model="comentario"></textarea>
-	<button>Adicionar Comentário</button>
-</form>
+	<dl class="dl-horizontal">
+		<div ng-repeat="comentario in ocorrencia.comentarios">
+			<dt>(bug)</dt>
+			<dd>{{comentario.texto}}</dd>
+		</div>
+	</dl>
+
+	<!-- Inserir comentários -->
+
+	<form ng-submit="comentar( comentario )">
+		<textarea 	class="form-control" 
+					rows="3" 
+					ng-model="comentario" 
+					placeholder="Adicionar comentário"></textarea><br />
+
+		<button class="btn btn-default">Enviar</button>
+	</form>
+</div>

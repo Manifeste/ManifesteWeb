@@ -16,7 +16,10 @@ define(
 		var appName = 'Manifeste';
 
 		var Manifeste = angular
-							.module( appName, [ 'ngRoute', OcorrenciasModule, AuthModule ])
+							.module( appName, [ 
+												'ngRoute', 'ui.bootstrap',
+												 AuthModule, OcorrenciasModule 
+											  ])
 							.config( RouteManager )
 							.config( config.credentialsConfig );
 	}

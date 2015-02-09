@@ -10,7 +10,7 @@ define(
 		 * Essa função constrói um Resource que busca ocorrências na API dada
 		 */
 		var RESTConsumer = function( $resource ){
-			return $resource( config.apiDomain + '/ocorrencias/:ocorID', {},
+			return $resource( config.apiDomain + '/ocorrencias/:ocorID', { ocorID: '@ocorID' },
 			{
 				'atualizarDescricao': {
 					method: 'PATCH'
@@ -20,8 +20,12 @@ define(
 					url: config.apiDomain + '/ocorrencias/:ocorID/encerrado'
 				},
 				'reabrir': {
-					method: 'POST',
+					method: 'DELETE',
 					url: config.apiDomain + '/ocorrencias/:ocorID/encerrado'
+				},
+				interesse: {
+					method: 'POST',
+					url: config.apiDomain + '/ocorrencias/:ocorID/interesse'	
 				},
 				'queryMine': {
 					method: 'GET',
@@ -30,7 +34,14 @@ define(
 				},
 				'comentar': {
 					method: 'POST',
+					params: {
+						ocorID: '@ocorID'
+					},
 					url: config.apiDomain + '/ocorrencias/:ocorID/comentarios'
+				},
+				'getComentarios': {
+					method: 'GET',
+					url: config.apiDomain + '/ocorrencias/:ocorID?filter=comentarios'
 				}
 			});
 		};

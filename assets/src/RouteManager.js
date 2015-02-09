@@ -13,6 +13,9 @@ define(
 		 */
 		var RouteManager = function( $routeProvider ){
 			$routeProvider
+				.when('/main', {
+					templateUrl: 'assets/views/main.html'
+				})
 				.when('/minhas', {
 					templateUrl: 'assets/views/minhas.html',
 					controller: 'MinhasOcorrenciasController'
@@ -21,15 +24,15 @@ define(
 					templateUrl: 'assets/views/detalhes.html',
 					controller: 'DetalhesController'
 				})
-				.when('/main', {
-					templateUrl: 'views/main.html'
-				})
 				.when('/login', {
 					templateUrl: 'assets/views/login.html',
 					controller: 'LoginController'
 				})
 				.when('/config', {
 					templateUrl: 'views/config.html'
+				})
+				.otherwise({
+					templateUrl: 'assets/views/main.html'
 				});
 		}
 

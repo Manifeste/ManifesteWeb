@@ -1,10 +1,19 @@
-<div class="body">
-	<center><h2>Suas Ocorrências</h2></center>
-	<table>
+<nav style="row">
+	<ul role="tab-list" class="nav nav-pills col  col-md-6 col-md-offset-3">
+		<li role="presentation" ng-click="tabs.changeTab(1)"><a>Minhas ocorrências</a></li>
+		<li role="presentation" ng-click="tabs.changeTab(2)"><a>Meus interesses</a></li>
+		<li role="presentation" ng-click="tabs.changeTab(3)"><a>Buscar</a></li>
+	</ul>
+</nav>
+
+<table class="table table-hover" ng-show="tabs.currentTab == 1">
+	<thead>
 		<tr>
 			<th>Título</th>
 			<th>Descrição</th>
 		</tr>
+	</thead>
+	<tbody>
 		<tr ng-repeat="ocorrencia in ocorrencias">
 			<td>
 				<a href="#/ocorrencias/{{ocorrencia._id}}">
@@ -13,5 +22,5 @@
 			</td>
 			<td>{{ocorrencia.descricao}}</td>
 		</tr>
-	</table>
-</div>
+	</tbody>
+</table>

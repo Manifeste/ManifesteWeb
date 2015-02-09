@@ -6,7 +6,7 @@
 .header {
 	margin: 0 auto;
 	border-bottom: 2px solid #69A84F;
-	width: 1100px;
+	width: 80%;
 	padding: 5px;	
 }
 .nome {
@@ -37,11 +37,6 @@
 	margin: 0 auto;
 	width: 1000px;
 	padding: 40px;
-}
-.body h2 {
-	margin: 0 auto;
-	height: 45px;
-	color: gray;
 }
 .body p {
 	font-size: 17px;

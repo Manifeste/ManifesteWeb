@@ -2,10 +2,15 @@
 
 	head.load(
 			[
-				'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-resource.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-cookies.js',
+				'./assets/lib/angular.js',
+				'./assets/lib/angular-route.js',
+				'./assets/lib/angular-resource.js',
+				'./assets/lib/angular-cookies.js',
+				'./assets/lib/angular-ui.js',
+
+				'./assets/lib/jquery.js',
+				'./assets/lib/bootstrap.js',
+				
 				'./assets/lib/require.js'
 			],
 			function(){

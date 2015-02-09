@@ -10,10 +10,17 @@ define(
 		
 	],
 	function() {
-		var MinhasOcorrenciasController = function( OcorrenciasService, $scope ){
+		var OcorrenciasController = function( OcorrenciasService, $scope ){
+			$scope.tabs = {
+				currentTab: 1,
+				changeTab: function( tabNumber ){
+					$scope.tabs.currentTab = tabNumber;
+				}
+			};
+
 			$scope.ocorrencias = OcorrenciasService.queryMine();
 		};
 
-		return ['OcorrenciasService', '$scope', MinhasOcorrenciasController]
+		return ['OcorrenciasService', '$scope', OcorrenciasController]
 	}
 );
